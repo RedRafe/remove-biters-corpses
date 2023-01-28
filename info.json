@@ -8,6 +8,6 @@
   "dependencies": [
     "base >= 1.1.0"
   ],
-  "description": "Easy shortcut key command to remove biter's corpses around the player",
+  "description": "Easy shortcut to remove biter's corpses around the player",
   "factorio_version": "1.1"
 }
