@@ -15,12 +15,12 @@ end
 
 -- @ event: CustomInputEvent
 -- Docs: https://lua-api.factorio.com/latest/events.html#CustomInputEvent
-script.on_event("rbc-remove-biters", function(event)
+local function removeCorpses(event)
   local player = game.players[event.player_index]
   if not player then return end
   local radius = settings.get_player_settings(event.player_index)["rbc-radius"].value
   
-  c = 0
+  local bodyCount = 0
   for ___, entity in pairs(player.surface.find_entities_filtered{
     position = player.position,
     radius = radius,
@@ -28,12 +28,16 @@ script.on_event("rbc-remove-biters", function(event)
   ) do 
     if not tableContains(blacklist, entity.name) then 
       entity.destroy()
-      c = c + 1
+      bodyCount = bodyCount + 1
     end
   end
-  if c > 0 then 
-    game.print("Removed " .. tostring(c) .. " corpses", {r=254/255, g=255/255, b=10/255, a=1})
+  if bodyCount > 0 then 
+    game.print("Removed " .. tostring(bodyCount) .. " corpses", {r=254/255, g=255/255, b=10/255, a=1})
   else 
     game.print("Clear", {r=49/255, g=190/255, b=48/255, a=1})
   end
-end)
+end
+
+------------------------------------
+
+script.on_event("rbc-remove-biters", removeCorpses)
