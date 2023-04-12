@@ -1,6 +1,6 @@
 local blacklist = {
   "character-corpse",
-  "transport-caution-corpse"
+  "transport-caution-corpse" -- Transport Drones
 }
 
 -- @ tableIn: Table
@@ -28,7 +28,7 @@ local function removeCorpses(event)
     type = "corpse"}
   ) do 
     if not tableContains(blacklist, entity.name) then 
-      game.print(entity.name)
+      --game.print(entity.name)
       entity.destroy()
       bodyCount = bodyCount + 1
     end
