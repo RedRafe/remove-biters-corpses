@@ -4,9 +4,6 @@ Date: 13.04.2023
   Info:
     - updated README
     - removed debug logs left in control
----------------------------------------------------------------------------------------------------
-Version: 1.1.2
-Date: 13.04.2023
   Bugfixes:
     - fixed crash with Transport Drones and blacklisted its corpses
 ---------------------------------------------------------------------------------------------------
