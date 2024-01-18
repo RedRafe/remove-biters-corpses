@@ -11,13 +11,13 @@ data:extend({
     order = 'a'
   },
   {
-    type = 'double-setting',
+    type = 'bool-setting',
     name = 'rbc-zoom-level',
     setting_type = 'runtime-per-user',
-    default_value = true,
-    localised_name = {'mod-setting-name.rbc-black-lines'},
-    localised_description = {'mod-setting-description.rbc-black-lines'},
-    order = 'c'
+    default_value = false,
+    localised_name = {'mod-setting-name.rbc-zoom-level'},
+    localised_description = {'mod-setting-description.rbc-zoom-level'},
+    order = 'b'
   },
   {
     type = 'bool-setting',
