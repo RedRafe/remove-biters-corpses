@@ -3,19 +3,19 @@ local ZOOM_STEP = 1.12
 local ZOOM_MAX = 10.0
 local ZOOM_MIN =  0.1
 
-global.zoom = global.zoom or {}
+storage.zoom = storage.zoom or {}
 
 -- @ index uint
 -- @ zoom double
 local function setPlayerZoom(index, zoom)
   if not index then return end
 
-  global.zoom[index] = zoom or 1.0
+  storage.zoom[index] = zoom or 1.0
 end
 
 -- @ index uint
 local function getPlayerZoom(index)
-  return global.zoom and global.zoom[index] or 1.0
+  return storage.zoom and storage.zoom[index] or 1.0
 end
 
 -- @ event defines.events.on_player_created|on_player_joined_game
@@ -59,7 +59,7 @@ end
 local Public = {}
 
 Public.on_init = function()
-  global.zoom = global.zoom or {}
+  storage.zoom = storage.zoom or {}
 
   for _, player in pairs(game.players) do
     setPlayerZoom(player.index)

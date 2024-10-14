@@ -3,6 +3,9 @@ local blacklist = {
   'transport-caution-corpse'  -- Transport Drones
 }
 
+local YELLOW = { r = 254/255, g = 255/255, b = 10/255, a = 1}
+local GREEN = { r = 49/255, g = 190/255, b = 48/255, a = 1}
+
 --=================================================================================================
 
 -- @ tableIn: Table
@@ -38,9 +41,9 @@ local function removeCorpses(event)
     end
   end
   if bodyCount > 0 then 
-    player.print('Removed ' .. tostring(bodyCount) .. ' corpses', {r=254/255, g=255/255, b=10/255, a=1})
+    player.print('Removed ' .. tostring(bodyCount) .. ' corpses', { color = YELLOW })
   else 
-    player.print('Clear', {r=49/255, g=190/255, b=48/255, a=1})
+    player.print('Clear', { color = GREEN })
   end
 end
 

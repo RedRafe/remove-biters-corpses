@@ -19,13 +19,4 @@ data:extend({
     localised_description = {'mod-setting-description.rbc-zoom-level'},
     order = 'b'
   },
-  {
-    type = 'bool-setting',
-    name = 'rbc-black-lines',
-    setting_type = 'startup',
-    default_value = true,
-    localised_name = {'mod-setting-name.rbc-black-lines'},
-    localised_description = {'mod-setting-description.rbc-black-lines'},
-    order = 'c'
-  }
 })
