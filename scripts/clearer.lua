@@ -5,6 +5,16 @@ local blacklist = {
   ['spidertron-remnants'] = true, -- Spidertron Enhancements
 }
 
+if script.active_mods['Krastorio2'] then
+  for _, entity in pairs(prototypes.entity) do
+    if entity.type == 'unit-spawner' then
+      for name, _ in pairs(entity.corpses or {}) do
+        blacklist[name] = true
+      end
+    end
+  end
+end
+
 local YELLOW = { r = 254/255, g = 255/255, b = 10/255, a = 1}
 local GREEN = { r = 49/255, g = 190/255, b = 48/255, a = 1}
 
